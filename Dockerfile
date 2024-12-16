@@ -7,10 +7,8 @@ WORKDIR /app
 # Copy the application source code
 COPY app.py /app/app.py
 
-COPY /codefresh/volume/demo-config-repo/config.yaml /app/config.yaml
 # Install dependencies
 RUN pip install pyyaml
 
 # Define the command to run the app
-CMD ["python", "/app/app.py", "/app/config.yaml"]
-
+CMD ["python", "/app/app.py"]
