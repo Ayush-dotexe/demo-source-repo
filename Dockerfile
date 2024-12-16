@@ -1,14 +1,17 @@
-# Use a lightweight Python image
+# Base image
 FROM python:3.9-slim
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy the application source code
-COPY app.py /app/app.py
+# Copy app files
+COPY app.py /app/
+
+# Placeholder for config.yaml to be copied at runtime
+COPY config.yaml /app/
 
 # Install dependencies
 RUN pip install pyyaml
 
-# Define the command to run the app
-CMD ["python", "/app/app.py", "/codefresh/volume/demo-config-repo/config.yaml"]
+# Command to run the app
+CMD ["python", "app.py"]
