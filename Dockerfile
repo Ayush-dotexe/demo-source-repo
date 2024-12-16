@@ -11,4 +11,4 @@ COPY app.py /app/app.py
 RUN pip install pyyaml
 
 # Define the command to run the app
-CMD ["python", "app.py", "demo-config-repo/config.yaml"]
+CMD ["python", "app.py", "codefresh/volume/demo-config-repo/config.yaml"]
